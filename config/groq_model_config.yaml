@@ -1,0 +1,17 @@
+# -------------------------
+# Groq LLM Configuration
+# -------------------------
+model:
+  provider: groq                        # Identifies the model provider
+  name: llama-3.1-8b-instant           # Groq Llama model
+  temperature: 1                        # Sampling temperature
+  max_output_tokens: 1024               # Maximum completion tokens
+  top_p: 1                              # Nucleus sampling
+  stream: true                           # Stream output chunk by chunk
+  stop_sequences:                        # Optional stop sequences
+    - "\n\n"
+    - "###"
+
+paths:
+  prompts_root: src/prompts             # Root folder containing Q1, Q2
+  output_root: output                    # Root folder for output PDFs

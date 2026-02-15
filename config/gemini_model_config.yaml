@@ -1,0 +1,16 @@
+# -------------------------
+# Gemini LLM Configuration
+# -------------------------
+model:
+  provider: gemini                   # Identifies the model provider
+  name: gemini-3-flash-preview       # Gemini model name
+  temperature: 0.7                   # Sampling temperature (creativity)
+  max_output_tokens: 2048            # Maximum tokens to generate
+  top_p: 1                            # Optional for nucleus sampling; Gemini ignores this
+  stop_sequences:                     # Optional stop sequences
+    - "\n\n"                         # Stop at double newline
+    - "###"
+
+paths:
+  prompts_root: src/prompts          # Root folder containing Q1, Q2
+  output_root: output                # Root folder for output PDFs
