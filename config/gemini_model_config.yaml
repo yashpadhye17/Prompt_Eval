@@ -3,13 +3,11 @@
 # -------------------------
 model:
   provider: gemini                   # Identifies the model provider
-  name: gemini-2.5-flash       # Gemini model name
-  temperature: 0.7                   # Sampling temperature (creativity)
-  max_output_tokens: 2048            # Maximum tokens to generate
-  top_p: 1                           # Optional for nucleus sampling; Gemini ignores this
-  stop_sequences:                    # Optional stop sequences
-    - "\n\n"                         # Stop at double newline
-    - "###"
+  name: gemini-2.5-pro      # Gemini model name
+  temperature: 0.89                   # Sampling temperature (creativity)
+  max_output_tokens: 4096            # Maximum tokens to generate
+  top_p: 0.95                 # Optional for nucleus sampling; Gemini ignores this
+  stop_sequences: []
 
 paths:
   prompts_root: src/prompts          # Root folder containing Q1, Q2

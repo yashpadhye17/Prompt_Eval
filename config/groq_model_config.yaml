@@ -8,9 +8,7 @@ model:
   max_output_tokens: 1024               # Maximum completion tokens
   top_p: 1                              # Nucleus sampling
   stream: true                          # Stream output chunk by chunk
-  stop_sequences:                       # Optional stop sequences
-    - "\n\n"
-    - "###"
+  stop_sequences: []
 
 paths:
   prompts_root: src/prompts             # Root folder containing Q1, Q2

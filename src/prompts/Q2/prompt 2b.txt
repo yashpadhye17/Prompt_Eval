@@ -1,0 +1,27 @@
+2B. Tree-of-Thought (ToT)
+
+2003 Northeast Blackout [KEY FACTS: 61,800MW offline, FirstEnergy 345kV lines sagged (high load + trees), SCADA alarm failures, 9-minute cascade across 8 states + Ontario, 50M affected, $6B loss]. 
+
+Explore THREE diagnostic paths: 
+PATH A) Equipment failure hypothesis (line sag/vegetation dominance)
+PATH B) Monitoring/communication hypothesis (SCADA/EMS deficiencies)
+PATH C) Coordination failure hypothesis (MISO-PJM-NYISO)
+
+For each path: assess MW impact timeline within 9-minute window, evidence strength (0-1.0), identify contradictions. Synthesize multi-factor explanation with quantified cascade triggers. 
+
+Base analysis ONLY on provided facts. For each MW figure: cite which KEY FACT supports it with verbatim quote. If extrapolating: show calculation formula. If KEY FACTS conflict: flag in 'uncertainties' with math. Consider technical, market, AND institutional factors equally. Avoid single-cause explanations. 
+
+Provide a comprehensive analysis report with the following structure:
+1. Executive Summary
+2. Path A Analysis: Equipment/Vegetation Failures (evidence strength, MW timeline)
+3. Path B Analysis: SCADA/Monitoring Deficiencies (evidence strength, operational impact)
+4. Path C Analysis: Interstate Coordination (evidence strength, cascade propagation)
+5. Cross-Path Comparison and Contradictions
+6. Synthesized Multi-Factor Explanation (with evidence weighting)
+7. 9-Minute Cascade Timeline (integrated from all paths)
+8. Geographic Propagation Analysis (8 states + Ontario)
+9. Post-Event Regulatory Changes
+10. Key Lessons Learned
+11. Uncertainties and Data Limitations
+
+Write in clear, professional prose with proper paragraphs and sections. Use headings and subheadings. Include all quantitative data with proper citations to the KEY FACTS. Maximum length: 800 words.

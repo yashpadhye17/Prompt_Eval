@@ -1,0 +1,32 @@
+1E. ReAct Prompting
+
+Texas 2021 Winter Storm Blackout [KEY FACTS: 52,000MW peak offline, gas production -48%, 4.5M homes, 4+ days, $80-130B loss, 246 deaths]. 
+
+Use ReAct framework:
+
+THOUGHT 1: Need to identify which generation sources failed and by how much MW.
+ACTION 1: Categorize failures: gas (wellhead freeze + pipeline), wind (icing), coal (frozen piles).
+OBSERVATION 1: [Calculate MW per source from facts]
+
+THOUGHT 2: Why did cascading happen so rapidly?
+ACTION 2: Analyze grid isolation (ERCOT) + cold weather demand spike + simultaneous supply loss.
+OBSERVATION 2: [Quantify supply-demand gap with timeline]
+
+THOUGHT 3: What institutional factors enabled this?
+ACTION 3: Examine weatherization standards, reserve margins, market design.
+OBSERVATION 3: [Identify regulatory gaps]
+
+Continue this cycle through 5-7 thought-action-observation loops until root causes are quantified. Base analysis ONLY on provided facts. For each MW/cost figure: cite specific KEY FACT verbatim. If calculating: show formula. If uncertain about any metric, output 'VERIFY_SOURCE' in uncertainties array. Consider technical, market, AND institutional factors equally. 
+
+Provide a comprehensive analysis report with the following structure:
+1. Executive Summary
+2. Reasoning Process (showing all THOUGHT-ACTION-OBSERVATION loops sequentially)
+3. Synthesis of Findings from Reasoning Loops
+4. Quantified Failure Analysis (MW breakdown by source)
+5. Cascading Failure Timeline (derived from reasoning)
+6. Institutional and Market Failures Identified
+7. Root Cause Integration
+8. Key Lessons Learned
+9. Uncertainties and Data Limitations
+
+Write in clear, professional prose with proper paragraphs and sections. Use headings and subheadings. Include all quantitative data with proper citations to the KEY FACTS. Maximum length: 800 words.

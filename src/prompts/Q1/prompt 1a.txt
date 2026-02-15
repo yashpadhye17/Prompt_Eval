@@ -1,0 +1,25 @@
+Query 1: Texas 2021 Winter Storm Blackout
+1A. Chain-of-Thought (CoT)
+
+Texas 2021 Winter Storm Blackout [KEY FACTS: 52,000MW peak offline (65% of grid capacity), 4.5M homes lost power, natural gas wellheads/pipelines froze, lasted 4+ days, economic loss $80-130B, 246 deaths]. 
+
+Analyze this blackout using step-by-step reasoning: 
+Step 1) Identify primary technical failures in generation and transmission. 
+Step 2) Calculate contribution of each factor to the 52,000MW capacity loss. 
+Step 3) Trace cascading failure sequence with timestamps. 
+Step 4) Quantify market/regulatory gaps. 
+Step 5) Synthesize root causes with evidence. 
+
+Base analysis ONLY on provided facts. If uncertain about any metric, output 'VERIFY_SOURCE' in uncertainties array. For each MW/cost figure: cite specific KEY FACT verbatim in 'evidence' field. If calculating/extrapolating: show formula. If KEY FACTS conflict: flag in 'uncertainties' with math showing discrepancy. Consider technical, market, AND institutional factors equally. Avoid single-cause explanations. 
+
+Provide a comprehensive analysis report with the following structure:
+1. Executive Summary
+2. Primary Technical Failures
+3. Capacity Loss Analysis (with MW breakdown by factor)
+4. Cascading Failure Timeline (with timestamps and events)
+5. Market and Regulatory Gaps
+6. Root Cause Synthesis
+7. Key Lessons Learned
+8. Uncertainties and Data Limitations
+
+Write in clear, professional prose with proper paragraphs and sections. Use headings and subheadings. Include all quantitative data with proper citations to the KEY FACTS. Maximum length: 800 words.

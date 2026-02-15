@@ -1,0 +1,25 @@
+1B. Tree-of-Thought (ToT)
+
+Texas 2021 Winter Storm Blackout [KEY FACTS: 52,000MW peak offline, natural gas production fell 48%, wind turbines iced, coal piles froze, lasted 4+ days, $80-130B economic loss, 4.5M homes, ERCOT isolated grid]. 
+
+Explore THREE parallel diagnostic paths: 
+PATH A) Generation failure hypothesis (gas freeze dominance)
+PATH B) Transmission/distribution hypothesis (equipment winterization)
+PATH C) Market design hypothesis (price caps/reserve margins)
+
+For each path: calculate MW contribution, assess supporting evidence strength (0-1.0), identify contradictions. Then synthesize the most probable multi-factor explanation with quantified contributions. 
+
+Base analysis ONLY on provided facts. If uncertain about any metric, output 'VERIFY_SOURCE' in uncertainties array. For each MW figure: cite which KEY FACT supports it with verbatim quote. If extrapolating: show calculation formula. Consider technical, market, AND institutional factors equally. Avoid single-cause explanations. 
+
+Provide a comprehensive analysis report with the following structure:
+1. Executive Summary
+2. Path A Analysis: Generation Failures (evidence strength score, MW impact)
+3. Path B Analysis: Transmission/Winterization (evidence strength score, MW impact)
+4. Path C Analysis: Market Design (evidence strength score, MW impact)
+5. Cross-Path Comparison and Contradictions
+6. Synthesized Multi-Factor Explanation (with probability weighting)
+7. Cascading Failure Timeline
+8. Key Lessons Learned
+9. Uncertainties and Data Limitations
+
+Write in clear, professional prose with proper paragraphs and sections. Use headings and subheadings. Include all quantitative data with proper citations to the KEY FACTS. Maximum length: 800 words.

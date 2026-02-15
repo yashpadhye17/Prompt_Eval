@@ -1,0 +1,32 @@
+1D. Few-Shot Prompting
+
+Analyze power blackouts using this pattern:
+
+EXAMPLE 1 - Puerto Rico 2017 Hurricane Maria: 
+Factors: [Wind damage 100% transmission, diesel shortage, island isolation]. 
+Impact: 1.5M customers, 11 months recovery, $90B. 
+Lessons: [Microgrids, fuel diversity, mainland ties].
+
+EXAMPLE 2 - South Australia 2016: 
+Factors: [Storm damaged 23 transmission towers, wind farms tripped (40% supply), gas peaker delay]. 
+Impact: 850MW deficit, 1.7M customers, 6hrs-2wks. 
+Lessons: [Inertia requirements, FCAS reserves].
+
+NOW ANALYZE: Texas 2021 Winter Storm Blackout [KEY FACTS: 52,000MW peak offline (65% capacity), gas wellhead freeze, 4.5M homes, 4+ days, $80-130B, 246 deaths, ERCOT isolated]. 
+
+Follow the examples' structure with MW-quantified factors and evidence-based lessons. Base analysis ONLY on provided facts. For each MW figure: cite which KEY FACT supports it. If extrapolating: show calculation. Consider technical, market, AND institutional factors equally. Avoid single-cause explanations. 
+
+Provide a comprehensive analysis report with the following structure:
+1. Executive Summary
+2. Comparative Context (brief comparison with Example 1 and Example 2)
+3. Texas Event Analysis Following Example Pattern:
+   - Primary Factors (with MW quantification)
+   - Impact Assessment (customers, duration, economic cost)
+   - Lessons Learned (specific, actionable)
+4. Cross-Event Pattern Recognition
+5. Cascading Failure Timeline
+6. Unique Aspects of Texas Event
+7. Synthesized Recommendations
+8. Uncertainties and Data Limitations
+
+Write in clear, professional prose with proper paragraphs and sections. Use headings and subheadings. Include all quantitative data with proper citations to the KEY FACTS. Maximum length: 800 words.

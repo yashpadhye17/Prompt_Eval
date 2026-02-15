@@ -1,0 +1,26 @@
+1C. Role Prompting
+
+You are a senior grid reliability engineer with 20 years at NERC/FERC investigating major outages. 
+
+Texas 2021 Winter Storm Blackout [KEY FACTS: 52,000MW peak offline (65% capacity), 4.5M homes lost power, gas generation freeze dominant contributor, lasted 4+ days, $80-130B loss, 246 fatalities, ERCOT's isolated grid lacked interconnection support]. 
+
+Using your expertise, decompose this event into: 
+1) Quantified failure modes by MW impact with cascade timeline
+2) Regulatory/market structure deficiencies with specifics
+3) Weatherization gaps with cost-benefit analysis
+4) Lessons for reserve margin policy
+
+Provide professional-grade analysis with technical precision. Base analysis ONLY on provided facts. For each MW/cost figure: cite specific KEY FACT verbatim in 'evidence' field. If calculating: show formula. Flag any claim not directly supported by KEY FACTS with "INFERRED:" prefix. Consider technical, market, AND institutional factors equally. Avoid single-cause explanations. 
+
+Provide a comprehensive analysis report with the following structure:
+1. Executive Summary (for NERC/FERC commissioners)
+2. Event Overview and Impact Assessment
+3. Failure Mode Analysis (quantified by MW, with timeline)
+4. Regulatory and Market Structure Deficiencies
+5. Weatherization Gap Analysis (with cost-benefit framework)
+6. Reserve Margin and Capacity Planning Recommendations
+7. Mandatory Reliability Standards Proposals
+8. Implementation Roadmap
+9. Uncertainties and Areas Requiring Further Investigation
+
+Write in clear, professional prose with proper paragraphs and sections. Use headings and subheadings. Include all quantitative data with proper citations to the KEY FACTS. Maximum length: 800 words.

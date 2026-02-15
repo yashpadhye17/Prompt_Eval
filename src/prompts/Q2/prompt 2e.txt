@@ -1,0 +1,33 @@
+2E. ReAct Prompting
+
+2003 Northeast Blackout [KEY FACTS: 61,800MW lost, FirstEnergy lines sagged into trees, SCADA alarms failed, 9-minute cascade, 50M affected, $6B]. 
+
+Use ReAct:
+
+THOUGHT 1: What initiated the cascade?
+ACTION 1: Examine FirstEnergy 345kV line failures (Stuart-Atlanta, Harding-Chamberlin) due to high load sag + vegetation.
+OBSERVATION 1: [Calculate initial MW redistribution and timestamp]
+
+THOUGHT 2: Why didn't operators intervene?
+ACTION 2: Analyze SCADA/EMS alarm failures preventing situational awareness.
+OBSERVATION 2: [Assess blind operation duration]
+
+THOUGHT 3: How did localized failure spread regionally in 9 minutes?
+ACTION 3: Map propagation across interconnected grids (MISO-PJM-NYISO-Ontario) with timeline.
+OBSERVATION 3: [Quantify protection relay cascade sequence]
+
+Continue this cycle through 5-7 thought-action-observation loops to fully decompose causes with timestamps. Base analysis ONLY on provided facts. For each MW/cost figure: cite specific KEY FACT verbatim. If calculating: show formula. If uncertain, output 'VERIFY_SOURCE' in uncertainties array. Consider technical, market, AND institutional factors equally. 
+
+Provide a comprehensive analysis report with the following structure:
+1. Executive Summary
+2. Reasoning Process (showing all THOUGHT-ACTION-OBSERVATION loops sequentially)
+3. Synthesis of Findings from Reasoning Loops
+4. Initial Trigger Analysis (MW, location, timestamp)
+5. SCADA System Failure Impact Assessment
+6. 9-Minute Cascade Reconstruction (minute-by-minute)
+7. Geographic Propagation Analysis (8 states + Ontario)
+8. Root Cause Integration
+9. Key Lessons Learned
+10. Uncertainties and Data Limitations
+
+Write in clear, professional prose with proper paragraphs and sections. Use headings and subheadings. Include all quantitative data with proper citations to the KEY FACTS. Maximum length: 800 words.

@@ -1,0 +1,28 @@
+2C. Role Prompting
+
+You are a NERC Task Force investigator analyzing the 2003 Northeast Blackout. 
+
+[KEY FACTS: 61,800MW lost, started with FirstEnergy Ohio 345kV line sag into trees, SCADA/alarm failures prevented operator awareness, 9-minute cascade across 8 states, 50M people, $6B economic impact, led to mandatory reliability standards]. 
+
+Provide expert decomposition: 
+1) Quantified failure sequence with timestamps within 9-minute cascade and MW drops
+2) SCADA/EMS deficiencies with operational impacts
+3) Vegetation management policy gaps
+4) Mandatory standards recommendations with technical justification
+
+Use investigative rigor. Base analysis ONLY on provided facts. For each MW/cost figure: cite specific KEY FACT verbatim in 'evidence' field. If calculating: show formula. Flag any claim not directly supported by KEY FACTS with "INFERRED:" prefix. Consider technical, market, AND institutional factors equally. Avoid single-cause explanations. 
+
+Provide a comprehensive analysis report with the following structure:
+1. Executive Summary (for NERC stakeholders)
+2. Investigation Scope and Methodology
+3. Detailed Failure Sequence (9-minute timeline with MW quantification)
+4. SCADA/EMS System Analysis (technical deficiencies and consequences)
+5. Vegetation Management Investigation (policy gaps and enforcement)
+6. Interstate Coordination Assessment
+7. Root Cause Determination
+8. Proposed Mandatory Reliability Standards (with technical justification)
+9. Implementation and Compliance Framework
+10. Conclusions and Recommendations
+11. Areas Requiring Further Investigation
+
+Write in clear, professional prose with proper paragraphs and sections. Use headings and subheadings. Include all quantitative data with proper citations to the KEY FACTS. Maximum length: 800 words.

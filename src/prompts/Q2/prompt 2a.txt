@@ -1,0 +1,28 @@
+Query 2: 2003 Northeast Blackout
+
+2A. Chain-of-Thought (CoT)
+
+2003 Northeast Blackout [KEY FACTS: 50M people affected, 61,800MW lost, FirstEnergy Ohio transmission lines sagged into trees, SCADA/alarm system failures, 9-minute cascade, economic loss $6B, 100+ deaths]. 
+
+Analyze using step-by-step reasoning: 
+Step 1) Identify initial trigger event and location with timestamp. 
+Step 2) Map cascading transmission failures with MW progression through the 9-minute window. 
+Step 3) Calculate contribution of monitoring/communication failures. 
+Step 4) Quantify inadequate vegetation management impact. 
+Step 5) Assess interstate coordination gaps with evidence. 
+
+Base analysis ONLY on provided facts. For each MW/cost figure: cite specific KEY FACT verbatim in 'evidence' field. If calculating: show formula. If uncertain about any metric, output 'VERIFY_SOURCE' in uncertainties array. Consider technical, market, AND institutional factors equally. Avoid single-cause explanations. 
+
+Provide a comprehensive analysis report with the following structure:
+1. Executive Summary
+2. Initial Trigger Event Analysis (location, timestamp, technical details)
+3. 9-Minute Cascade Progression (MW drops, geographic spread)
+4. SCADA/Monitoring System Failures
+5. Vegetation Management Deficiencies
+6. Interstate Coordination Gaps
+7. Root Cause Synthesis
+8. Regulatory Impact (mandatory reliability standards)
+9. Key Lessons Learned
+10. Uncertainties and Data Limitations
+
+Write in clear, professional prose with proper paragraphs and sections. Use headings and subheadings. Include all quantitative data with proper citations to the KEY FACTS. Maximum length: 800 words.

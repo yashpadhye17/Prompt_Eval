@@ -1,0 +1,32 @@
+2D. Few-Shot Prompting
+
+Analyze blackouts using this pattern:
+
+EXAMPLE 1 - Italy 2003: 
+Factors: [Swiss line tree contact, remaining lines overloaded, split into islands]. 
+Impact: 56M people, 27GW, 3-18hrs. 
+Lessons: [N-2 planning, inter-TSO protocols].
+
+EXAMPLE 2 - Brazil 2009 Itaipu: 
+Factors: [Transmission short circuit, 14GW Itaipu tripped, frequency collapse]. 
+Impact: 87M people, 18GW deficit, 2-7hrs. 
+Lessons: [Generator protection settings, black start].
+
+NOW ANALYZE: 2003 Northeast Blackout [KEY FACTS: 61,800MW, FirstEnergy 345kV lines to trees, SCADA failures, 9-minute cascade, 50M people, $6B, led to mandatory NERC standards]. 
+
+Match structure with MW-quantified cascade timeline and evidence-based regulatory lessons. Base analysis ONLY on provided facts. For each MW figure: cite which KEY FACT supports it. If extrapolating: show calculation. Consider technical, market, AND institutional factors equally. Avoid single-cause explanations. 
+
+Provide a comprehensive analysis report with the following structure:
+1. Executive Summary
+2. Comparative Context (comparison with Italy 2003 and Brazil 2009)
+3. Northeast Blackout Analysis Following Example Pattern:
+   - Primary Factors (with MW quantification)
+   - Impact Assessment (people affected, duration, economic cost)
+   - Lessons Learned (specific, actionable)
+4. Cross-Event Pattern Recognition (vegetation, cascades, coordination)
+5. 9-Minute Cascade Timeline
+6. Unique Regulatory Outcome (mandatory NERC standards)
+7. Synthesized Recommendations
+8. Uncertainties and Data Limitations
+
+Write in clear, professional prose with proper paragraphs and sections. Use headings and subheadings. Include all quantitative data with proper citations to the KEY FACTS. Maximum length: 800 words.
