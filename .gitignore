@@ -5,5 +5,3 @@ src/core/.env
 __pycache__/
 *.pyc
 
-# Optional: ignore output PDFs if large
-# output/
