@@ -1,0 +1,13 @@
+# Core Dependencies
+groq>=0.4.0
+openai>=1.0.0
+python-dotenv>=1.0.0
+
+# Configuration Management
+pyyaml>=6.0
+
+# PDF Generation
+reportlab>=4.0.0
+
+# Utilities
+pathlib2>=2.3.7; python_version < '3.4'
