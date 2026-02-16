@@ -70,7 +70,6 @@ Prompt_Evaluations/
    Open `src/core/.env` and add your API keys:
    ```env
    GROQ_API_KEY=your_groq_api_key_here
-   OPENAI_API_KEY=your_openai_api_key_here
    ```
 
    > **Note**: Replace `your_groq_api_key_here` with your actual Groq API key. You can obtain a Groq API key from [Groq Cloud](https://console.groq.com/).
