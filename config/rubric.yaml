@@ -1,0 +1,89 @@
+# -------------------------------------------------------------------
+# LLM-as-judge rubric. Anchored 1-5 scales; the judge must justify each
+# score with a short quote from the candidate output.
+# -------------------------------------------------------------------
+
+scale:
+  min: 1
+  max: 5
+
+dimensions:
+  - id: factual_accuracy
+    name: Factual Accuracy
+    weight: 0.30
+    description: >-
+      Whether every quantitative and causal claim traces back to the supplied
+      KEY FACTS, with no invented figures, dates, or entities.
+    anchors:
+      1: Multiple figures or entities contradict or are absent from the KEY FACTS.
+      2: Several unsupported specifics, or one clear contradiction of a KEY FACT.
+      3: Mostly grounded, but some figures appear without support in the KEY FACTS.
+      4: All major figures grounded; at most trivial unsupported detail.
+      5: Every quantitative claim traces to a KEY FACT or a shown derivation.
+
+  - id: causal_reasoning
+    name: Causal Reasoning Depth
+    weight: 0.25
+    description: >-
+      Whether the analysis builds a genuine multi-factor causal chain rather
+      than restating facts, and explicitly avoids single-cause explanations.
+    anchors:
+      1: Restates facts with no causal linkage.
+      2: Asserts causes without mechanism; effectively single-cause.
+      3: Identifies several causes but links them only loosely.
+      4: Clear causal chains across technical, market, and institutional factors.
+      5: Rigorous multi-factor causal synthesis showing how factors compounded.
+
+  - id: structural_adherence
+    name: Structural Adherence
+    weight: 0.15
+    description: >-
+      Whether the response follows the exact numbered section structure the
+      prompt demanded, in order, with all sections substantively filled.
+    anchors:
+      1: Ignores the requested structure.
+      2: Some requested sections present, many missing or empty.
+      3: Most sections present but out of order or thinly filled.
+      4: All sections present and ordered; one or two thin.
+      5: All sections present, correctly ordered, each substantively developed.
+
+  - id: uncertainty_calibration
+    name: Uncertainty Calibration
+    weight: 0.15
+    description: >-
+      Whether the response honestly flags what it cannot know, uses
+      VERIFY_SOURCE where required, and avoids false precision. Confidently
+      asserting a figure that is not in the KEY FACTS should score low.
+    anchors:
+      1: Uniformly confident; invented precision; no uncertainty section.
+      2: Token uncertainty section that flags nothing real.
+      3: Flags some uncertainty but misses obvious unsupported inferences.
+      4: Flags most genuine gaps and marks extrapolations as such.
+      5: Precisely delimits known vs inferred, with VERIFY_SOURCE used correctly.
+
+  - id: completeness
+    name: Completeness
+    weight: 0.10
+    description: >-
+      Whether every analytical task in the prompt (each numbered Step, each
+      calculation, each requested breakdown) was actually performed.
+    anchors:
+      1: Most requested analytical steps skipped.
+      2: Several steps skipped or only gestured at.
+      3: All steps touched, some superficially.
+      4: All steps performed; minor gaps in requested calculations.
+      5: Every step performed, including all requested formulas and breakdowns.
+
+  - id: professional_tone
+    name: Professional Tone
+    weight: 0.05
+    description: >-
+      Whether the register matches a professional incident-analysis report:
+      clear prose, no filler, no meta-commentary about being an AI, no
+      leaked reasoning scaffolding.
+    anchors:
+      1: Informal, rambling, or full of meta-commentary.
+      2: Frequent filler or visible reasoning scaffolding.
+      3: Serviceable but uneven register.
+      4: Clean professional prose with minor lapses.
+      5: Publication-ready analytical register throughout.

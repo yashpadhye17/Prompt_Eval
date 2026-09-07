@@ -1,9 +1,22 @@
 # Ignore environment files
 src/core/.env
+.env
 
 # Python cache
 __pycache__/
 *.pyc
+
+# Virtualenv
+.venv/
+venv/
+
+# Evaluation run artifacts (raw outputs, SQLite DB, generated reports)
+runs/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/tsconfig.tsbuildinfo
 
 # macOS
 .DS_Store

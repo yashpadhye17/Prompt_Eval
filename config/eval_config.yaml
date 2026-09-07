@@ -1,0 +1,189 @@
+# -------------------------------------------------------------------
+# Prompt Evaluation Framework configuration
+# -------------------------------------------------------------------
+
+paths:
+  prompts_root: src/prompts
+  runs_root: runs
+  db_path: runs/eval.db
+
+# Candidate models under evaluation.
+# groq/compound is deliberately excluded: it has web-search tool access
+# (which breaks the "base analysis ONLY on provided facts" constraint) and
+# injects a large hidden system prompt that corrupts token/cost accounting.
+models:
+  - id: openai/gpt-oss-120b
+    label: gpt-oss-120b
+    family: gpt-oss
+  - id: openai/gpt-oss-20b
+    label: gpt-oss-20b
+    family: gpt-oss
+  # The qwen models are capped at 1,000 output tokens per minute on the
+  # on-demand tier, which is less than one 800-word report needs. At that cap
+  # qwen3.8 is truncated mid-report and qwen3.6 returns no visible text at all
+  # (it spends the whole budget on internal reasoning), so scores for them
+  # would measure the rate limit rather than the model. They are left here,
+  # commented out, so they can be re-enabled on a higher Groq tier.
+  # - id: qwen/qwen3.8-27b
+  #   label: qwen3.8-27b
+  #   family: qwen
+  # - id: qwen/qwen3.6-27b
+  #   label: qwen3.6-27b
+  #   family: qwen
+
+# Generation settings applied to every candidate so comparisons are fair.
+# The original repo used different temperature/max_tokens per config, which
+# made the two models non-comparable. These are now equalized.
+generation:
+  temperature: 0.9
+  top_p: 1
+  # Deliberately generous. qwen3.6-27b spends 1800-2200 words on internal
+  # reasoning before answering, and was returning zero visible content at
+  # 2048 and a truncated answer at 4096. A cap that truncates one model but
+  # not the others invalidates the comparison; the prompts' own 800-word
+  # limit is what constrains length, not this ceiling.
+  max_output_tokens: 8192
+  repeats: 3
+
+judge:
+  # Distinct from the candidates so judging does not compete with generation
+  # for the same daily token allowance, and so rows are not self-graded.
+  model: qwen/qwen3.8-27b
+  temperature: 0
+  max_output_tokens: 900
+  enabled: true
+  # Grade only the first N repeats of every model x prompt cell. Deterministic
+  # metrics still cover every generation (85% of the composite). 1 keeps a
+  # 60-generation free-tier run inside the 200k/day judge budget; 0 means all.
+  repeats_per_cell: 1
+  # Drop middle rubric anchors and shorten justifications. Cuts ~30% of the
+  # judge prompt, which is the expensive half of a judge call.
+  compact_rubric: true
+  # Reuse a prior verdict when the same model grades the same text under the
+  # same rubric. Judging is temperature 0, so this is free rather than stale.
+  cache_enabled: true
+
+# Groq on-demand meters tokens per day separately per model. This local
+# ledger is a best-effort mirror used to refuse a run that cannot finish.
+budget:
+  enabled: true
+  daily_token_limit: 200000
+  reserve_fraction: 0.05
+  per_model: {}
+
+# Launch-matrix shortcuts. The UI applies these as a starting point; any
+# field can still be changed before the run starts.
+presets:
+  - id: free_tier
+    label: Free tier
+    description: >
+      2 models x 10 prompts x 3 repeats, judge the first repeat of each cell
+      (~20 judge calls). Completes inside a 200k tokens/day allowance.
+    models:
+      - openai/gpt-oss-120b
+      - openai/gpt-oss-20b
+    repeats: 3
+    judge_enabled: true
+    judge_model: qwen/qwen3.8-27b
+    judge_repeats_per_cell: 1
+  - id: smoke
+    label: Smoke
+    description: One model, two prompts, one repeat. Use this to confirm the pipeline.
+    models:
+      - openai/gpt-oss-20b
+    prompt_ids:
+      - Q1/prompt 1a
+      - Q2/prompt 2b
+    repeats: 1
+    judge_enabled: true
+    judge_model: qwen/qwen3.8-27b
+    judge_repeats_per_cell: 1
+  - id: full_judge
+    label: Full judge coverage
+    description: >
+      Same matrix as Free tier, but every repeat is judged (~60 judge calls).
+      The launcher will refuse this if the judge model's remaining daily
+      allowance cannot cover it.
+    models:
+      - openai/gpt-oss-120b
+      - openai/gpt-oss-20b
+    repeats: 3
+    judge_enabled: true
+    judge_model: qwen/qwen3.8-27b
+    judge_repeats_per_cell: 0
+
+runtime:
+  # Concurrent in-flight requests to Groq. Kept low because the on-demand tier
+  # enforces per-minute token budgets; raise it on a paid tier for speed.
+  concurrency: 2
+  # Generous retry budget: per-minute token limits can require minutes of
+  # waiting, not seconds. Requests that are individually too large to ever
+  # succeed are detected and failed immediately instead of being retried.
+  max_retries: 8
+  retry_initial_backoff_s: 2
+  retry_max_backoff_s: 60
+  request_timeout_s: 180
+  # Fallback completion-token estimate for dry-run costing, used only until
+  # the database has observed history for a model to average instead.
+  estimate_completion_tokens: 2000
+
+# Hard per-model output ceilings, applied whether the model is generating a
+# candidate response or acting as judge. Needed where a provider enforces a
+# tighter per-minute output budget on some models: a request whose max_tokens
+# exceeds that budget is rejected outright, no matter how long you wait.
+# The qwen models allow only 1,000 output tokens per minute on this tier.
+model_limits:
+  qwen/qwen3.8-27b: 900
+  qwen/qwen3.6-27b: 900
+
+# USD per 1,000,000 tokens. VERIFY against current Groq pricing before
+# citing cost figures externally; these are placeholders, not gospel.
+# Set a model to null to have cost reported as unavailable rather than wrong.
+pricing:
+  openai/gpt-oss-120b:
+    input_per_mtok: 0.15
+    output_per_mtok: 0.75
+  openai/gpt-oss-20b:
+    input_per_mtok: 0.10
+    output_per_mtok: 0.50
+  qwen/qwen3.8-27b:
+    input_per_mtok: 0.29
+    output_per_mtok: 0.59
+  qwen/qwen3.6-27b:
+    input_per_mtok: 0.29
+    output_per_mtok: 0.59
+
+# Composite score weights. Must be non-negative; they are normalized to sum
+# to 1 at load time, so relative magnitude is what matters.
+scoring:
+  weights:
+    fact_recall: 0.20
+    numeric_grounding: 0.20
+    contradiction_free: 0.15
+    structural_compliance: 0.15
+    length_compliance: 0.05
+    required_tokens: 0.05
+    format_clean: 0.05
+    judge_overall: 0.15
+
+  # Word-limit grading. Outputs at or under the cap score 1.0; score decays
+  # linearly to 0 at (cap * overflow_zero_multiple).
+  length:
+    overflow_zero_multiple: 3.0
+
+facts:
+  # Relative tolerance when matching an output number to a reference fact.
+  # Kept tight (1%) so that unit conversions and rounding still match while a
+  # genuine misstatement such as 53,000MW for 52,000MW is caught rather than
+  # absorbed.
+  match_rel_tolerance: 0.01
+  # A number that shares a fact's dimension and lands within this relative
+  # distance of it, without matching, is treated as a misstatement of that
+  # fact (a contradiction). Anything further away is just an unsupported new
+  # figure, not a contradiction.
+  contradiction_rel_window: 0.25
+  # Small integers and years are ignored as "trivial" so section numbering
+  # and dates don't count as hallucinated quantities.
+  ignore_years_from: 1900
+  ignore_years_to: 2100
+  trivial_int_max: 12
